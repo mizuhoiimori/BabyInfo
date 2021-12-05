@@ -1,0 +1,24 @@
+<%= render 'layouts/flash_messages' %>
+
+<div class="container">
+  <div class="row">
+    <div class='mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
+      <h1>
+       <i class="fas fa-baby-carriage"></i>
+       <strong>　Baby Info　</strong>
+       <i class="fas fa-grin-stars"></i></h1>
+        
+      <p>Baby Infoはベビー用品を実際に使用した</p>
+      <p>先輩パパ・ママのレビューを閲覧、投稿することのできる情報共有サイトです。</p>
+      <p>新しい家族にピッタリなアイテムを見つけてください！</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          <%= link_to 'ログイン',new_user_session_path, class: "btn btn-info btn-sm btn-block mb-3 sign_in" %>
+        </div>
+        <div class="row">
+          <%= link_to '新規登録',new_user_registration_path, class: "btn btn-success btn-sm btn-block sign_up" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
