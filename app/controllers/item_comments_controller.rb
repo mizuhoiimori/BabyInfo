@@ -10,8 +10,9 @@ def create
 end
 
 def destroy
-  ItemComment.find_by(params[:id]).destroy
-  redirect_to request.referer
+  @item = Item.find(params[:item_id])
+  @item_comments = ItemComment.find(params[:item_comment_id])
+  @item_comments.destroy
 end
 
 private

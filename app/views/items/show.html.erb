@@ -2,9 +2,9 @@
   <div class= 'row'>
     <div class='col-md-3'>
       <h2>アカウント情報</h2>
-      <%= render 'users/info', user: @item.user %>
+      <%= render 'users/info', user: @user %>
       <h2 class='mt-3'>新規投稿</h2>
-      <%= render 'form', item: @item_new %>
+          <%= render 'form', item: @item_new %>
     </div>
     <div class='col-md-8 offset-md-1'>
       <h2>アイテム詳細</h2>
@@ -22,20 +22,19 @@
           <td><%= @item.category %></td>
           <td><%= @item.price %></td>
           <td><%= @item.store %></td>
-          <td class="relative-post-evaluation">
-            <span id="star-rate-<%= item.id %>"></span>
+          <td>
+            <div id="star-rate-<%= @item.id %>">
             <script>
-              $('#star-rate-<%= item.id %>').raty({
+              $('#star-rate-<%= @item.id %>').raty({
                 size: 36,
                 starOff: "<%= asset_path('star-off.png') %>",
                 starOn: "<%= asset_path('star-on.png') %>",
                 starHalf: "<%= asset_path('star-half.png') %>",
                 half: true,
                 readOnly: true,
-                score: <%= item.evaluation %>,
+                score: <%= @item.evaluation %>,
               });
             </script>
-            <%= item.evaluation %>
           </td>
           <td><%= @item.body %></td>
           <% if @user == current_user %>

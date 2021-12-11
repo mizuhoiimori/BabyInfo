@@ -22,20 +22,19 @@
         <td><%= item.category %></td>
         <td><%= item.price %></td>
         <td><%= item.store %></td>
-        <td class="relative-post-evaluation">
-          <span id="star-rate-<%= post.id %>"></span>
+        <td>
+          <div id="star-rate-<%= item.id %>"></div>
           <script>
-            $('#star-rate-<%= post.id %>').raty({
+            $('#star-rate-<%= item.id %>').raty({
               size: 36,
               starOff: "<%= asset_path('star-off.png') %>",
               starOn: "<%= asset_path('star-on.png') %>",
               starHalf: "<%= asset_path('star-half.png') %>",
               half: true,
               readOnly: true,
-              score: <%= post.evaluation %>,
+              score: <%= item.evaluation %>,
             });
           </script>
-          <%= post.evaluation %>
         </td>
         <td><%= item.body %></td>
       </tr>

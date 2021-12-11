@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+before_action :ensure_current_user,{only: [:edit, :update, :destroy]}
+
   def show
     @item = Item.find(params[:id])
-    @items = Item.all
     @user = @item.user
     @item_new = Item.new
-    # @item_comment = ItemComment.new
+    @item_comment = ItemComment.new
+    @item_comments = ItemComment.find_by(params[:id])
   end
 
   def index

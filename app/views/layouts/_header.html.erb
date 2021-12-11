@@ -6,6 +6,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="search ml-auto">
+          <%= render 'layouts/search' %>
+        </div>
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li><%= link_to ' マイページ',user_path(current_user),class: 'fas fa-home nav-link text-light' %></li>
@@ -15,7 +18,7 @@
         <% else %>
           <li><%= link_to ' トップページ',root_path,class: 'fas fa-home nav-link text-light' %></li>
           <li><%= link_to ' BabyInfoとは？',home_about_path,class: 'fas fa-link nav-link text-light' %></li>
-          <li><%= link_to ' 新規会員登録', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
+          <li><%= link_to ' アカウント登録', new_user_registration_path,class: 'fas fa-user-plus nav-link text-light' %></li>
           <li><%= link_to ' ログイン', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-light'%></li>
         <% end %>
         </ul>
